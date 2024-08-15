@@ -1,0 +1,71 @@
+.libro-detalle-container {
+    font-family: Arial, sans-serif;
+    min-height: calc(100vh - 8em);
+    padding: 0 10px; /* Añadido padding para evitar que el contenido se pegue a los bordes */
+}
+
+.libro-detalle-titulo {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 2em;
+    color: #333;
+}
+
+.libro-detalle-info {
+    display: flex;
+    flex-direction: column; /* Cambiado para que en pantallas pequeñas la imagen y el texto se apilen verticalmente */
+    align-items: center; /* Alinea el contenido en el centro */
+    max-width: 800px;
+    margin: 0 auto;
+    gap: 20px; /* Añadido espacio entre imagen y texto */
+}
+
+.libro-detalle-portada {
+    max-width: 100%; /* Asegura que la imagen no se salga del contenedor */
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2); /* Sombra más prominente para efecto 3D */
+    transform: rotateY(10deg); /* Añade un pequeño ángulo para efecto 3D */
+    transition: transform 0.3s; /* Suaviza el efecto de transición */
+}
+
+.libro-detalle-portada:hover {
+    transform: rotateY(0deg); /* Quita el ángulo en hover para efecto interactivo */
+}
+
+.libro-detalle-texto {
+    max-width: 100%;
+    text-align: left;
+}
+
+.libro-detalle-texto p {
+    font-size: 1.2em;
+    color: #555;
+    margin: 10px 0; /* Añadido margen entre párrafos */
+}
+
+.libro-detalle-texto strong {
+    color: #000;
+}
+
+/* Consultas de medios para pantallas más pequeñas */
+@media (min-width: 768px) {
+    .libro-detalle-info {
+        flex-direction: row; /* Cambia la dirección del flex para pantallas medianas y grandes */
+        align-items: flex-start; /* Alinea la imagen y el texto al inicio en pantallas más grandes */
+    }
+
+    .libro-detalle-portada {
+        max-width: 250px; /* Ajusta el tamaño de la imagen en pantallas medianas y grandes */
+    }
+}
+
+@media (max-width: 767px) {
+    .libro-detalle-titulo {
+        font-size: 1.5em; /* Reduce el tamaño del texto en pantallas pequeñas */
+    }
+
+    .libro-detalle-texto p {
+        font-size: 1em; /* Ajusta el tamaño del texto en pantallas pequeñas */
+    }
+}
